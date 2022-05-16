@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Dog Pics</title>
+</head>
+
+<body>
+	<h1>Random Dog Pics</h1>
+	<h2>Find Random Dog Pics</h2>
+	<strong>Breed:</strong> <%- breed %>
+	<br>
+	<img style="border: 1rem ridge blue; width:20rem; height:20rem"
+	 	src = <%- imgLink %> alt ="API not working. (Panic)" id = "image" >
+	<br>
+	<a href="/"><button>Randomize</button></a>
+	<hr>
+	<h2>Saved</h2>
+	<form action = <%- actLink %> method = "post">
+		<label><strong>Name: </strong><input type="text" name="name" required/></label>
+		<input type = "submit" value = "Save Current Pic">
+	</form><br>
+	<a href="/searchAll"><button>Search Saved Pics</button></a><br>
+	<hr>
+</body>
+</html>

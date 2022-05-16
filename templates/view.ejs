@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Saved Pics</title>
+</head>
+
+<body>
+	<h1>Saved Pics</h1>
+    <form action = <%- viewName %> method = "post">
+		<label><strong>Name: </strong><input type="text" name="name" required/></label>
+		<input type = "submit" value = "Search">
+	</form>
+	<br>
+	<form action = <%- viewBreed %> method = "post">
+		<label><strong>Breed: </strong><input type="text" name="breed" required/></label>
+		<input type = "submit" value = "Search">
+	</form><br>
+	<a href="/searchAll"><button>Show All</button></a>
+    <a href="/clear"><button>Delete All Saved Pics</button></a>
+	<a href="/"><button>Home</button></a><br><br>
+    <%- table %>
+	<hr>
+</body>
+</html>
