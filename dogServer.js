@@ -18,7 +18,10 @@ let breed;
 const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
 const databaseAndCollection = {db: process.env.MONGO_DB_NAME, collection:process.env.MONGO_COLLECTION};
-let portNumber = process.argv[2];
+let portNumber = 5000;
+if (process.argv.length = 3){
+    process.argv[2];
+}
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const { table } = require("console");

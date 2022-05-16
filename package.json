@@ -4,7 +4,7 @@
   "description": "",
   "main": "dogServer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dogServer.js 5000"
   },
   "author": "",
   "license": "ISC",
