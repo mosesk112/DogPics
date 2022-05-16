@@ -70,7 +70,7 @@ async function main(){
 
         app.get("/search", (request, response) => {
 
-            let vars = {actLink :"http://localhost:"+portNumber+"/view"};
+            let vars = {actLink :"/view"};
             response.render("search.ejs", vars); 
         });
         app.get("/clear", async (request, response)=> {
@@ -86,8 +86,8 @@ async function main(){
             const cursor = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find();
             let result = await cursor.toArray();
             
-            let vars = {viewName :"http://localhost:"+portNumber+"/searchName",
-                viewBreed :"http://localhost:"+portNumber+"/searchBreed",
+            let vars = {viewName :"/searchName",
+                viewBreed :"/searchBreed",
                 table: makeTable(result)
         };
             response.render("view.ejs", vars); 
@@ -97,8 +97,8 @@ async function main(){
             const cursor = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find(filter);
             let result = await cursor.toArray(filter);
             
-            let vars = {viewName :"http://localhost:"+portNumber+"/searchName",
-                viewBreed :"http://localhost:"+portNumber+"/searchBreed",
+            let vars = {viewName :"/searchName",
+                viewBreed :"/searchBreed",
                 table: makeTable(result)
             };
             response.render("view.ejs", vars); 
@@ -109,8 +109,8 @@ async function main(){
             const cursor = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find(filter);
             let result = await cursor.toArray(filter);
             
-            let vars = {viewName :"http://localhost:"+portNumber+"/searchName",
-                viewBreed :"http://localhost:"+portNumber+"/searchBreed",
+            let vars = {viewName :"/searchName",
+                viewBreed :"/searchBreed",
                 table: makeTable(result)
             };
             response.render("view.ejs", vars); 
@@ -142,7 +142,7 @@ function loadIndex(){
     link =  JSON.parse(apiCall.responseText).message;
     breed = link.split("/")[4];
     let vars = {imgLink: link, breed: breed,
-        actLink :"http://localhost:"+portNumber+"/save"};
+        actLink :"/save"};
     return vars;
 }
 
